@@ -1,0 +1,41 @@
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+ }
+ img{
+     width: 100%;
+ }
+ .image-container{
+     width: 80%;
+     margin: 25px;
+ }
+.image-container:hover{
+     opacity: 0.8;}
+.image-container:active{
+     transform: scale(0.95);}
+.caption, .price{
+     text-align: right;
+     font-family: Assistant,sans-serif;
+    }
+ .caption{
+     font-weight: 550; }
+button{
+     width: 70px;
+     height: 30px;
+     background-color: black;
+     color: white;
+     border: none;
+     border-radius: 20px;
+ }
+
+
+@media only screen and (max-width:800px){
+    .grid-container{
+        grid-template-columns: repeat(2,1fr);
+     }
+}
+
+    
+
+
+  

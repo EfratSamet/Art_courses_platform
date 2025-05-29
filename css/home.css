@@ -1,0 +1,119 @@
+nav{
+    display: flex;
+    top: 0;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    flex-wrap: wrap;
+    background-color: red;
+    justify-content: center;
+    align-items: center;
+    direction: rtl;
+}
+body{
+    padding-top: 100px;
+}
+.logo{
+    width: 15vw;
+    height: 7vw;
+    background-size: contain;  
+    right: 0;
+}
+h1,a, h3,label{
+    text-decoration: none;
+    margin: 1%;
+    color: white;
+    font-size:large;
+    font-family: Assistant,sans-serif;
+    font-weight: 500;
+}
+a{
+    text-decoration: none;
+    margin: 1%;
+    color: white;
+    font-size:large;
+    font-family: Assistant,sans-serif;
+    font-weight: 600;
+}
+a:hover{
+    text-decoration: underline;
+}
+footer{
+    display:flex;
+    background-color: red;
+    bottom: 0;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    direction: rtl;
+}
+.footer{
+    width: 20%;
+    padding: 2%;
+    text-align: right;
+    display: flex;
+    flex-direction:column;
+}
+.submit{
+    text-align: left ;
+    padding: 2%;
+}
+.mail{
+    display: flex ;
+    justify-content: flex-end;
+}
+.animation{
+    width : 98vw;
+    height : 50vw;
+    background-image: url(../pictures/baby/p20.png);
+    background-size: cover;
+    animation: animation 15s infinite;
+    animation-timing-function: ease-in-out;
+    
+}
+@keyframes animation{
+    33%{background-image:url(../pictures/baby/p21.png);} 
+    66%{background-image:url(../pictures/baby/p22.png);}
+    100%{background-image:url(../pictures/baby/p23.png);} 
+}
+ #n{
+    text-align: center;
+    font-size: large;
+    border-radius: 20px;
+    width: 150px;
+    height: 50px;
+    color: red;
+    font-size: x-large;
+    animation: sale 10s infinite;
+    animation-timing-function: ease;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0 auto;
+    margin-top: 6px;
+}
+@keyframes sale{
+   25%{color:orange;}
+   50%{color:blue;}
+   75%{color:yellow;} 
+   100%{color:yellowgreen;} 
+}
+.caption, .price{
+    text-align: right;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.cart{
+    width: 5%;
+    height: auto;
+    background-size: cover;
+}
+.cart:active{
+    transform: scale(1.1);
+}
+.sale img{
+    width: 98%;
+}
+
+
+
+
+ 
+
