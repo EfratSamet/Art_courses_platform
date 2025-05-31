@@ -1,0 +1,50 @@
+css
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.catalog {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.product {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px; /* הקטנה של padding */
+    margin: 10px;
+    width: calc(24% - 20px); /* 4 מוצרים בשורה */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.product:hover {
+    transform: scale(1.05);
+}
+
+.product img {
+    max-width: 100%;
+    height: 200px; /* גובה התמונה יכול להישאר כך או להקטין עוד */
+    border-radius: 2px;
+}
+
+.description {
+    margin: 15px 0;
+    color: #555;
+}
+
+.price {
+    font-weight: bold;
+    color: #28a745;
+}
+
+h2 {
+    font-size: 15px; /* גודל חדש עבור H1 */
+    margin: 2px 0; /* מרחק סביב הכותרת */
+}

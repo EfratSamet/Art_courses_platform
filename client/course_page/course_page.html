@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="course_page.css">
+    <title>קורס ספציפי</title>
+</head>
+<body>
+    <div class="course-container">
+        <h1>שם הקורס: פיתוח אתרים</h1>
+        <img src="course-image.jpg" alt="תמונה של הקורס" class="course-image">
+        
+        <div class="course-details">
+            <h2>פרטי הקורס</h2>
+            <p>תיאור הקורס: בקורס זה נלמד כיצד לבנות אתרים עם HTML, CSS ו-JavaScript. הקורס מיועד למתחילים ומתקדמים כאחד.</p>
+            <p>משך הקורס: 8 שבועות</p>
+            <p>מחיר: 500 ש"ח</p>
+        </div>
+
+        <div class="rating-section">
+            <h2>דירוג הקורס</h2>
+            <div class="star-rating">
+                <span class="star" data-value="1">&#9733;</span>
+                <span class="star" data-value="2">&#9733;</span>
+                <span class="star" data-value="3">&#9733;</span>
+                <span class="star" data-value="4">&#9733;</span>
+                <span class="star" data-value="5">&#9733;</span>
+            </div>
+            <button type="submit" class="submit-rating">שלח דירוג</button>
+            <p class="rating-message"></p>
+        </div>
+
+        <div class="comments-section">
+            <h2>תגובות משתמשים</h2>
+            <div class="comment">
+                <p><strong>משתמש 1:</strong> קורס מצוין, למדתי המון!</p>
+            </div>
+            <div class="comment">
+                <p><strong>משתמש 2:</strong> התוכן היה מעניין, אך הייתי רוצה יותר תרגולים מעשיים.</p>
+            </div>
+            <div class="add-comment">
+                <h3>הוסף תגובה</h3>
+                <form>
+                    <textarea placeholder="כתוב את התגובה שלך כאן..." rows="4" required></textarea>
+                    <button type="submit" class="submit-comment">שלח תגובה</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="course_page.js"></script>
+</body>
+</html>
