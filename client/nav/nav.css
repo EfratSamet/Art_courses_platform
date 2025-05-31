@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    background-color: #333;
+    position: fixed; /* קובע את הניווט כחלק קבוע של העמוד */
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* מבטיח שהניווט נמצא מעל תוכן אחר */
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* מרכז את התפריט */
+}
+
+.navbar li {
+    margin: 0 15px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px; /* ריווח פנימי */
+    transition: background-color 0.3s;
+}
+
+.navbar a:hover {
+    background-color: #575757; /* צבע רקע כאשר העכבר מעל */
+}
+
+.content {
+    padding-top: 60px; /* רווח למעלה כדי שלא יסתיר את הניווט */
+}
+
+h1, h2 {
+    margin: 20px;
+}
