@@ -1,28 +1,14 @@
-import express from 'express'
-import {
-    addUser,
-    loginUser,
-    logoutUser,
-    deleteUser,
-    loginDirec,
-    logoutDirec
-} from '../controllers/login_controllers.js';
+import express from 'express';
+import { login } from '../controllers/login_controllers.js';
 
 const router = express.Router();
 
-//user register
-router.post('/addUser', addUser);
-//user login
-router.post('/loginUser', loginUser);
-//user logout
-router.post('/logoutUser', logoutUser);
-//delete user
-router.delete('/deleteUser',deleteUser);
+// משתמש מתחבר ומקבל טוקן
+router.post('/', login);
+router.post('/login', login);
 
-//director login
-router.post('/loginDirec', loginDirec);
-//director logout
-router.post('/logoutDirec', logoutDirec);
+router.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../client/html/login.html'));
+});
 
-
-export{router};
+export { router };

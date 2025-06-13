@@ -4,7 +4,8 @@ import {
            deleteOrder, 
            addOrder, 
            getAllOrders, 
-           updateOrder 
+           updateOrder,
+              getUserOrders
        } from'../controllers/order_controller.js';
 const router = express.Router();
 // Route to get all orders
@@ -18,5 +19,7 @@ router.put('/:id', updateOrder);
 
 // Route to delete an order
 router.delete('/:id', deleteOrder);
+// שליפת כל ההזמנות לפי userId
+router.get('/user/:userId', getUserOrders);
 
 export{router};

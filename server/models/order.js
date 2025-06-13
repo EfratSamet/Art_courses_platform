@@ -1,29 +1,25 @@
 import mongoose from 'mongoose';
 
 const orderSchema = new mongoose.Schema({
-    courses: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Course',
-        required: true  
-    }],
-    totalPrice: {
-        type: Number,
-        required: true  
-    },
-    orderDate: {
-        type: Date,
-        default: Date.now  
-    },
-    orderCode: {
-        type: String,
-        required: true  
-    },
-    studentCode: {
-        type: String,
-        required: true  
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
+  },
+  products: [
+    {
+      courseId: { type: mongoose.Schema.Types.ObjectId, ref: 'Course' },
+      name: String,
+      price: Number
     }
+  ],
+  totalAmount: Number,
+  fullName: String,
+  purchaseDate: {
+    type: Date,
+    default: Date.now
+  }
 });
 
 const Order = mongoose.model('Order', orderSchema);
-
 export default Order;

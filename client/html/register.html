@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>הרשמה לתלמיד</title>
+  <link rel="stylesheet" href="../css/login.css" />
+    <script src="../javaScript/register.js" defer></script>
+
+</head>
+<body>
+  <form action="/student/register" method="POST">
+    <h2>הרשמה לתלמיד</h2>
+    <label for="name">שם מלא:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="email">דוא״ל:</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="password">סיסמה:</label>
+    <input type="password" id="password" name="password" required>
+
+    <label for="idNumber">תעודת זהות:</label>
+    <input type="text" id="idNumber" name="idNumber" required>
+
+    <button type="submit">הרשמה</button>
+         <div id="error-message" style="color: red; font-weight: bold;"></div>
+
+    <p>כבר יש לך חשבון? <a href="/html/login.html">התחבר כאן</a></p>
+
+  </form>
+
+
+</body>
+</html>

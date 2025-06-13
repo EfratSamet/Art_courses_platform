@@ -50,6 +50,16 @@ export const getAllOrders = async (req, res) => {
         res.status(400).send('Error getting all orders');
     }
 };
+export const getUserOrders = async (req, res) => {
+  try {
+    const { userId } = req.params;
+    const orders = await Order.find({ user: userId });
+    res.json(orders);
+  } catch (err) {
+    console.error('❌ שגיאה בשליפת ההזמנות:', err);
+    res.status(500).send('שגיאה בשליפת ההזמנות');
+  }
+};
 // ניתן להוסיף פונקציות נוספות כגון יצירת הזמנה, קבלת פרטי הזמנה וכדומה
 
 // module.exports = {

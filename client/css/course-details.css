@@ -1,0 +1,43 @@
+body {
+  direction: rtl;
+  text-align: right;
+  font-family: 'Rubik', 'Assistant', sans-serif;
+  background: #f4f6f8;
+  padding: 0;
+  margin: 0;
+  color: #333;
+}
+
+.course-detail {
+  direction: rtl;
+  text-align: right;
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+
+.course-detail img.course-image {
+  width: 100%;
+  border-radius: 12px;
+  margin: 16px 0;
+  object-fit: cover;
+}
+
+.course-detail p {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.course-detail button {
+  background-color: #574b90;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 10px;
+  margin-top: 20px;
+  cursor: pointer;
+}

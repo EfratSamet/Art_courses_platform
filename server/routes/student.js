@@ -17,5 +17,6 @@ router.put('/:id', updateStudent);
 
 // Route to delete a student
 router.delete('/:id', deleteStudent);
+router.post('/register', addStudent);
 
 export{router};

@@ -1,37 +1,42 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import { router as login } from './server/routes/login.js';
-import {router as admin } from './server/routes/admin.js';
-import {router as cart } from './server/routes/cart.js';
-import {router as course } from './server/routes/course.js';
-import {router as order} from './server/routes/order.js';
-import {router as student} from './server/routes/student.js';
-import {router as teacher} from './server/routes/teacher.js';
-import session from 'express-session';
-import mongoose from 'mongoose';
-//import cron from 'node-cron';
-import dotenv from 'dotenv';
-dotenv.config();
-//import bcrypt from 'bcryptjs';
-const port = 3000;
-const app = express(); // הוספת הגדרת app
-app.use(bodyParser.json());
-console.log(process.env.JWT_SECRET_KEY)
+import { router as admin } from './server/routes/admin.js';
+import { router as cart } from './server/routes/cart.js';
+import { router as course } from './server/routes/course.js';
+import { router as order } from './server/routes/order.js';
+import { router as student } from './server/routes/student.js';
+import { router as teacher } from './server/routes/teacher.js';
 
-// הגדרת Middleware
+import session from 'express-session';
+import dotenv from 'dotenv';
+import connectToDatabase from './server/db/mongoconnect.js';
+dotenv.config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const port = 3000;
+const app = express();
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
+
+// תמיכה ב־session
 app.use(session({
-  secret: 'your-secret-key', // סוד לחתימה על ה-session. תחליף במשהו חזק יותר בפרודקשן.
+  secret: 'your-secret-key',
   resave: false,
   saveUninitialized: true,
-  cookie: { secure: false } // באפשרותך לשנות ל-true אם אתה משתמש ב-HTTPS
+  cookie: { secure: false }
 }));
 
-// הגדרת מנוע תבניות
-app.set('view engine', 'ejs');
-app.set('views', './views');
+// הגדרת סטטיים
+app.use(express.static(path.join(__dirname, 'client'))); // מגיש את register.html
 
+// ראוטים
 app.use("/login", login);
 app.use('/cart', cart);
 app.use('/admin', admin);
@@ -40,19 +45,13 @@ app.use('/teacher', teacher);
 app.use('/student', student);
 app.use('/course', course);
 
-// חיבור למסד נתונים
-import('./server/db/mongoconnect.js');
-
-/*// המערכת תסגר כל יום מוצאי שבת בחצות
-cron.schedule('0 0 * * 0', () => {
-  console.log('פעולה מתבצעת!');
-  
+// ברירת מחדל: הצגת דף ההרשמה
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, 'client','html', 'login.html'));
 });
 
-console.log('המשימה מתוזמנת לפעולה כל שבוע ביום ראשון בשעה 10:00');
-*/
+connectToDatabase();
 
-// השקת השרת
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });

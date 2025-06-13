@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&family=Assistant&display=swap');
+
+body {
+  font-family: 'Rubik', 'Assistant', Arial, sans-serif;
+  background: #f4f6f8;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.orders-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.order {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 20px 24px;
+  width: 360px;
+  box-sizing: border-box;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  border-right: 5px solid #8c7ae6;
+  margin-bottom: 32px; /* רווח ברור בין הכרטיסים */
+}
+
+.order:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+.order h3 {
+  margin-top: 0;
+  color: #574b90;
+  font-size: 18px;
+}
+
+.order h4 {
+  margin-bottom: 8px;
+  color: #4bcffa;
+  font-size: 16px;
+}
+
+.order p {
+  margin: 4px 0;
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+.order ul {
+  padding-right: 20px;
+  list-style: none;
+  margin: 0;
+}
+
+.order ul li::before {
+  content: '🎨';
+  margin-left: 8px;
+}

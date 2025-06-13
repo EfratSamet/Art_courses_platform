@@ -1,22 +1,26 @@
 import express from 'express';
-import { 
-         removeFromCart, 
-         getCart, 
-         addToCart, 
-         updateCourseInCart 
-        } from '../controllers/cart_controller.js';
+import {
+  removeFromCart,
+  getCart,
+  addToCart,
+  updateCourseInCart,
+  checkoutCart
+} from '../controllers/cart_controller.js';
+
 const router = express.Router();
 
-// Route to get all items in the cart
-router.get('/', getCart);
+// שליפת עגלה לפי userId
+router.get('/:userId', getCart);
 
-// Route to add a new item to the cart
-router.post('/', addToCart);
+// הוספה לעגלה
+router.post('/add', addToCart);
 
-// Route to update an existing item in the cart
+// עדכון קורס בעגלה (אם תתממש בעתיד)
 router.put('/:id', updateCourseInCart);
 
-// Route to delete an item from the cart
-router.delete('/:id', removeFromCart);
+// הסרת קורס מהעגלה
+router.delete('/remove', removeFromCart);
+// ביצוע רכישה בפועל
+router.post('/checkout', checkoutCart);
 
-export{router};
+export { router };

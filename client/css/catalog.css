@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&family=Assistant&display=swap');
+
+body {
+  font-family: 'Rubik', 'Assistant', Arial, sans-serif;
+  background: #f4f6f8;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  color: #574b90;
+  font-size: 28px;
+  margin: 40px 0 20px;
+}
+
+#courses-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+  padding: 20px 40px 60px;
+}
+
+.course {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 32px; /* יותר מרווח פנימי */
+  width: 440px;  /* יותר רחב מ-360px */
+  min-height: 480px; /* גובה מינימלי אחיד ונעים */
+  box-sizing: border-box;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  border-right: 6px solid #8c7ae6;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+
+.course:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.course h2 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  color: #4bcffa;
+}
+
+.course p {
+  margin: 6px 0;
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+.course-image {
+  width: 100%;
+  height: auto;
+  margin: 12px 0;
+  border-radius: 12px;
+  object-fit: cover;
+  max-height: 180px;
+}
+
+.course button {
+  margin-top: auto;
+  background-color: #574b90;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: stretch;
+}
+
+.course button:hover {
+  background-color: #40346f;
+}

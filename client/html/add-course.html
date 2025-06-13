@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>הוספת קורס</title>
+      <link rel="stylesheet" href="../css/addPage.css" />
+
+</head>
+<body>
+
+  <h1>הוספת קורס חדש</h1>
+
+  <form id="add-course-form">
+    <label for="name">שם הקורס:</label>
+    <input type="text" id="name" required>
+
+    <label for="description">תיאור:</label>
+    <textarea id="description" required></textarea>
+
+    <label for="price">מחיר:</label>
+    <input type="number" id="price" required>
+
+    <label for="targetAudience">קהל יעד:</label>
+    <input type="text" id="targetAudience">
+
+    <label for="startDate">תאריך התחלה:</label>
+    <input type="date" id="startDate" required>
+
+    <label for="endDate">תאריך סיום:</label>
+    <input type="date" id="endDate" required>
+
+    <label for="totalMeetings">מספר מפגשים:</label>
+    <input type="number" id="totalMeetings" required>
+
+    <label>ימים בשבוע:</label>
+    <label><input type="checkbox" name="meetingDays" value="ראשון"> ראשון</label>
+    <label><input type="checkbox" name="meetingDays" value="שני"> שני</label>
+    <label><input type="checkbox" name="meetingDays" value="שלישי"> שלישי</label>
+    <label><input type="checkbox" name="meetingDays" value="רביעי"> רביעי</label>
+    <label><input type="checkbox" name="meetingDays" value="חמישי"> חמישי</label>
+    <label><input type="checkbox" name="meetingDays" value="שישי"> שישי</label>
+
+    <label for="startTime">שעת התחלה:</label>
+    <input type="time" id="startTime">
+
+    <label for="endTime">שעת סיום:</label>
+    <input type="time" id="endTime">
+
+    <label for="location">מיקום:</label>
+    <input type="text" id="location" required>
+
+    <label for="imageUrl">כתובת תמונה ראשית:</label>
+    <input type="url" id="imageUrl">
+
+    <label for="imageGallery">גלריית תמונות (הפרד בפסיקים):</label>
+    <input type="text" id="imageGallery" placeholder="https://url1.jpg, https://url2.jpg">
+
+    <button type="submit">הוסף קורס</button>
+  </form>
+
+  <script src="../javaScript/add-course.js"></script>
+</body>
+</html>

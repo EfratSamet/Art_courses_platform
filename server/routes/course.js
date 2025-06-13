@@ -1,9 +1,11 @@
+import Course from '../models/course.js';
 import express from 'express';
 import { 
            deleteCourse, 
            addCourse, 
            getAllCourses, 
-           updateCourse 
+           updateCourse,
+           getCourseById
        } from'../controllers/course_controller.js';
 const router = express.Router();
 // Route to get all courses
@@ -17,5 +19,5 @@ router.put('/:id', updateCourse);
 
 // Route to delete a course
 router.delete('/:id', deleteCourse);
-
+router.get('/:id', getCourseById); 
 export{router};

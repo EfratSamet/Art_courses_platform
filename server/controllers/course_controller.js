@@ -5,7 +5,7 @@ export const getAllCourses = async (req, res) => {
     try {
         const courses = await Course.find();
         res.json(courses);
-    } catch (err) {
+        } catch (err) {
         res.status(400).send('Error getting courses');
     }
 };
@@ -42,6 +42,20 @@ export const deleteCourse = async (req, res) => {
         res.send('Course deleted successfully');
     } catch (err) {
         res.status(400).send('Error deleting course');
+    }
+};
+// פונקציה לקבלת קורס לפי מזהה
+export const getCourseById = async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const course = await Course.findById(id);
+        if (!course) {
+            return res.status(404).send('Course not found');
+        }
+        res.json(course);
+    } catch (err) {
+        res.status(400).send('Error fetching course');
     }
 };
 

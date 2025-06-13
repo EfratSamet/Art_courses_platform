@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>העגלה שלי</title>
+  <script src="../javaScript/cart.js" defer></script>
+    <link rel="stylesheet" href="../css/nav.css" />
+  <link rel="stylesheet" href="../css/cart.css" />
+    <link rel="stylesheet" href="../css/nav.css" />
+
+</head>
+<body>
+   <div id="navbar-container"></div>
+  <script src="../javaScript/nav.js" defer></script>
+
+  <h2>העגלה שלי</h2>
+  <ul id="cart-list"></ul>
+  <hr />
+<h3>פרטי תשלום</h3>
+<form id="payment-form">
+  <label>
+    שם מלא:
+    <input type="text" id="fullName" required />
+  </label><br />
+  <label>
+    מספר כרטיס:
+    <input type="text" id="cardNumber" required />
+  </label><br />
+  <label>
+    תוקף:
+    <input type="month" id="expiry" required />
+  </label><br />
+  <label>
+    CVV:
+    <input type="text" id="cvv" required />
+  </label><br />
+  <button type="submit">💳 שלם עכשיו</button>
+</form>
+
+<div id="payment-result" style="margin-top: 1em;"></div>
+
+</body>
+</html>

@@ -3,7 +3,7 @@ import mongoose from 'mongoose';
 // הגדרת הפונקציה לחיבור למסד הנתונים
 const connectToDatabase = async () => {
     try {
-        await mongoose.connect('mongodb+srv://Efrat:5603@cluster0.la7xl5l.mongodb.net/', {
+        await mongoose.connect('mongodb+srv://Efrat:5603@cluster0.la7xl5l.mongodb.net/project', {
             useNewUrlParser: true,
             useUnifiedTopology: true,
         });
